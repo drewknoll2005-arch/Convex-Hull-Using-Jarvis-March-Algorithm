@@ -25,7 +25,40 @@ def orientation(p1:tuple[int, int],  p2: tuple[int, int], p3: tuple[int, int]):
 Point = Tuple[float, float]
 
 def convex_hull_jarvis(points: List[Point]) -> List[Point]:
-   pass
+
+    n = len(points)
+
+    if n < 3:
+        return points
+
+    left_most = min(points, key=lambda p: p[0])
+
+    p = left_most
+
+    
+    hull = []
+
+    while True:
+        hull.append(p)
+        
+        
+        
+        if points[0] != p:
+            q = points[0]
+        else:
+            q = points[1]
+
+        for r in points:
+            if orientation(p, q, r) == 2:
+                q = r
+
+        p = q
+
+        if p == left_most:
+            break
+    
+
+    return hull
 
 
 if __name__ == "__main__":
