@@ -45,8 +45,8 @@ class TestMathFunctions(unittest.TestCase):
 
 
     def test_collinear_on_edges(self):
-        points = [(-5,-5),(0,0),(2,2),(-5,5),(5,-5),(5,5)] 
-        self.assertEqual(convex_hull_jarvis(points), [(-5, -5), (-5, 5), (5, 5), (5, -5)])
+        points = [(0,0), (1,0), (2,0), (3,0), (3,3), (0,3)]
+        self.assertEqual(convex_hull_jarvis(points), [(0,0), (0,3), (3,3), (3,0)])
 
 if __name__ == "__main__":
     unittest.main()
