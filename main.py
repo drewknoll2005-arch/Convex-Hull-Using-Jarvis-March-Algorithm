@@ -57,7 +57,10 @@ def convex_hull_jarvis(points: List[Point]) -> List[Point]:
         if p == left_most:
             break
     
-
+    if len(hull) == 1:
+        return -1
+    if len(hull) == 2:
+        return -2
     return hull
 
 
